@@ -1,4 +1,4 @@
-import React, { userState, useState } from "react";
+import React, { useState } from "react";
 
 const Button = ({ handleClick, text }) => (
   <button onClick={handleClick}>{text}</button>
@@ -9,17 +9,19 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const handleGoodClick = ()=>{
-    setGood(good + 1); 
-  }
+  const handleGoodClick = () => {
+    setGood(good + 1);
+  };
 
-  const handleNeutralClick = ()=>{
-    setNeutral(neutral + 1); 
-  }
+  const handleNeutralClick = () => {
+    setNeutral(neutral + 1);
+  };
 
-  const handleBadClick = ()=>{
-    setBad(bad + 1); 
-  }
+  const handleBadClick = () => {
+    setBad(bad + 1);
+  };
+
+  const all = good + neutral + bad;
 
   return (
     <div>
@@ -32,6 +34,9 @@ const App = () => {
       <p>good {good}</p>
       <p>neutral {neutral}</p>
       <p>bad {bad}</p>
+      <p>all {all}</p>
+      <p>average {(good - bad) / all}</p>
+      <p>positive {(good/all*100)}% </p>
     </div>
   );
 };
