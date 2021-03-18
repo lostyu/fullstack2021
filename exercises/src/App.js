@@ -12,6 +12,10 @@ const App = () => {
     event.preventDefault();
 
     if (newName !== "") {
+      if (persons.findIndex((item) => item.name === newName) !== -1) {
+        alert(`${newName} is already added to phonebook`);
+        return;
+      }
       setNewName("");
       setPersons(persons.concat({ name: newName }));
     }
