@@ -1,9 +1,5 @@
-const Search = ({ searchName, handleSearch }) => {
-  return (
-    <div>
-      filter shown with <input value={searchName} onChange={handleSearch} />
-    </div>
-  );
+const Search = ({ searchName, handleSearchChange }) => {
+  return <input value={searchName} onChange={handleSearchChange} />;
 };
 
 export default Search;
