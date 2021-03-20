@@ -1,16 +1,7 @@
-const Country = ({ name, capital, population, languages, flag }) => {
+const Country = ({ name, handleClickShow }) => {
   return (
     <div>
-      <h1>{name}</h1>
-      <p>capital {capital}</p>
-      <p>population {population}</p>
-      <strong>languages</strong>
-      <ul>
-        {languages.map((lang) => (
-          <li key={lang.name}>{lang.name}</li>
-        ))}
-      </ul>
-      <img alt="flag" src={flag} width="120" height="120" />
+      {name} <button onClick={() => handleClickShow(name)}>show</button>
     </div>
   );
 };
