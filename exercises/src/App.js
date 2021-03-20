@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getAll } from "./services/restCountries";
 import Search from "./components/Search";
 import Countries from "./components/Countries";
-import Country from "./components/Country";
 
 const App = () => {
   const [searchName, setSearchName] = useState("");
@@ -27,14 +26,7 @@ const App = () => {
   return (
     <div>
       <Search searchName={searchName} handleSearchChange={handleSearchChange} />
-
-      {entries.length >= 10 && (
-        <div>Too many matches, specify another filter</div>
-      )}
-
-      {entries.length > 1 && entries.length < 10 && <div>112233</div>}
-
-      {/* {entries.length === 1 && <Country name={} />} */}
+      <Countries countries={entries}/>
     </div>
   );
 };
